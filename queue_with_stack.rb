@@ -5,7 +5,7 @@ class Qs
   end
 
   def enqueue(val)
-    @eStack << val
+    @eStack << (val)
   end
 
   def dequeue
