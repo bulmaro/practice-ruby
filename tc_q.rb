@@ -19,9 +19,9 @@ class TestQueueWithStack < Test::Unit::TestCase
     q.enqueue(1)
     q.enqueue(3)
     q.enqueue(4)
-    assert_equal(4, q.dequeue())
-    assert_equal(3, q.dequeue())
     assert_equal(1, q.dequeue())
+    assert_equal(3, q.dequeue())
+    assert_equal(4, q.dequeue())
   end
 
   def test_e5d1e3d5
@@ -31,16 +31,16 @@ class TestQueueWithStack < Test::Unit::TestCase
     q.enqueue(6)
     q.enqueue(8)
     q.enqueue(10)
-    assert_equal(10, q.dequeue())
+    assert_equal(2, q.dequeue())
     q.enqueue(12)
     q.enqueue(14)
     q.enqueue(16)
-    assert_equal(16, q.dequeue())
-    assert_equal(14, q.dequeue())
-    assert_equal(12, q.dequeue())
-    assert_equal(8, q.dequeue())
-    assert_equal(6, q.dequeue())
     assert_equal(4, q.dequeue())
+    assert_equal(6, q.dequeue())
+    assert_equal(8, q.dequeue())
+    assert_equal(10, q.dequeue())
+    assert_equal(12, q.dequeue())
+    assert_equal(14, q.dequeue())
   end
 
   def test_empty_d
