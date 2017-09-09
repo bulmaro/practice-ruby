@@ -1,0 +1,10 @@
+---
+val: 10
+right:
+  val: 25
+  right:
+    val: 30
+    left: 
+    right: 
+  left: 
+left: 
