@@ -1,8 +1,5 @@
 require 'yaml'
 
-$DEBUG = false
-y = YAML.load_file("sample/bin-tree.yaml")
-
 class Node
 	attr_accessor :value
 	attr_accessor :left
@@ -15,18 +12,6 @@ def nodeFromHash(hash)
 	hash['left'] == nil ? node.left = nil : node.left = nodeFromHash(hash['left'])
 	hash['right'] == nil ? node.right = nil : node.right = nodeFromHash(hash['right'])
 
-
-#	if hash['left'] != nil
-#		node.left = nodeFromHash(hash['left'])
-#	else
-#		node.left = hash['left']
-#	end
-
-#	if hash['right'] != nil
-#		node.right = hash['right']
-#	else
-#		node.right = hash['right']
-#	end
 	if $DEBUG
 		puts "node value = #{node.value}"
 		puts "node left = #{node.left}"
@@ -36,6 +21,10 @@ def nodeFromHash(hash)
 	return node
 end
 
-p y
-n = nodeFromHash(y)
-p n
+if $0 == __FILE__ # If file is invoked by itself
+	y = YAML.load_file("sample/full.yaml")
+
+	p y
+	n = nodeFromHash(y)
+	p n
+end
